@@ -8,6 +8,10 @@ module Angus
     def server
       port_option = "-p #{options[:port]}" || ''
       host_option = "--host #{options[:host]}" || ''
+<<<<<<< HEAD
+=======
+      puts "rackup #{port_option} #{host_option}"
+>>>>>>> Add flags to server command
       command_processor.run("rackup #{port_option} #{host_option}", verbose: false)
     end
 
