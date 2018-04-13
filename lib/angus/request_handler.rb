@@ -27,10 +27,12 @@ module Angus
     end
 
     def call(env)
+      puts env
       to_app.call(env)
     end
 
     def to_app
+      puts "DEFNITIONS #{@definitions}"
       inner_app = BaseProxy.new(self, lambda { @definitions })
 
       @app ||= @middleware.reverse.inject(inner_app) do |app, middleware|
