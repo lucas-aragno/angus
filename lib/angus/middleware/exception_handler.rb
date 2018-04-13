@@ -20,10 +20,11 @@ module Angus
       def call!(env)
         @app.call(env)
       rescue Exception => exception
+        puts "EXCEPTION #{exception}"
         [
           status_code(exception),
-          { 'Content-Type' => 'application/json' },
-          [build_error_response(exception)]
+          { 'Content-Type' => 'application/json' } #,
+          #[build_error_response(exception)]
         ]
       end
 
