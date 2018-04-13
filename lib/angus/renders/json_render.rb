@@ -4,7 +4,7 @@ module JsonRender
     if json.is_a?(String)
        json
      else
-       JSON(json, :ascii_only => true)
+       JSON(json)
      end
   end
 
